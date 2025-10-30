@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADS Developers - Android & Multiplatform App Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7fa;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1920x600/667eea/ffffff?text=App+Development+Hero') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero-content p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: #ffd700;
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #ffed4e;
+        }
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about, .services, .portfolio, .contact {
+            margin-bottom: 60px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #667eea;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-content img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card i {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .portfolio-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .portfolio-item h3 {
+            padding: 20px;
+            margin: 0;
+            color: #333;
+        }
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2em;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">MADS Developers</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to MADS Developers</h1>
+            <p>Expert Android and Multiplatform App Development Services</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <img src="https://via.placeholder.com/300x300/764ba2/ffffff?text=Developer+Photo" alt="MADS Developers">
+            <div>
+                <p>At MADS Developers, we specialize in creating innovative Android and multiplatform applications that deliver exceptional user experiences. With a passion for technology and a commitment to quality, we turn ideas into reality.</p>
+                <p>Our team of skilled developers uses the latest tools and frameworks to build apps that are scalable, secure, and user-friendly. Whether you're a startup or an established business, we're here to help you succeed in the digital world.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Android App Development</h3>
+                <p>Custom Android applications tailored to your needs, from concept to deployment on the Google Play Store.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-globe"></i>
+                <h3>Multiplatform Development</h3>
+                <p>Cross-platform apps using frameworks like Flutter and React Native for iOS, Android, and more.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>App Maintenance & Updates</h3>
+                <p>Ongoing support, bug fixes, and feature enhancements to keep your app running smoothly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Project+1" alt="Project 1">
+                <h3>E-Commerce App</h3>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200/764ba2/ffffff?text=Project+2" alt="Project 2">
+                <h3>Social Media Platform</h3>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200/ffd700/333333?text=Project+3" alt="Project 3">
+                <h3>Productivity Tool</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 MADS Developers. All rights reserved.</p>
+        <p>Follow us on <a href="#" style="color: #ffd700;">LinkedIn</a> | <a href="#" style="color: #ffd700;">GitHub</a></p>
+    </footer>
+
+</body>
+</html>
